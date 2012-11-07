@@ -1,0 +1,194 @@
+a {
+    text-decoration:none;
+}
+
+a.commit {
+    text-decoration:underline;
+}
+
+table {
+    width:100%;
+    max-width:100%;
+    background-color:transparent;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+.diff_file {
+    border:1px solid #CCC;
+    margin-bottom:1em;
+}
+
+.diff_file .diff_file_header {
+    border-bottom:1px solid #CCC;
+    background:#eee;
+    padding:7px 5px;
+}
+
+.diff_file .diff_file_header span {
+    font-size:14px;
+}
+
+.diff_file .diff_file_content {
+    overflow:auto;
+    overflow-y:hidden;
+    background:#fff;
+    color:#333;
+    font-size:12px;
+    font-family:Menlo, 'Liberation Mono', Consolas, 'Courier New', 'andale mono','lucida console',monospace;
+}
+
+.diff_file .diff_file_content .old span.idiff {
+    background-color:#FAA;
+}
+
+.diff_file .diff_file_content .new span.idiff {
+    background-color:#AFA;
+}
+
+.diff_file .diff_file_content table td {
+    line-height:18px;
+    font-family:Menlo, 'Liberation Mono', Consolas, 'Courier New', 'andale mono','lucida console',monospace;
+}
+
+.diff_file .diff_file_content_image {
+    background:#eee;
+    text-align:center;
+}
+
+.diff_file .diff_file_content_image img {
+    max-width:400px;
+    margin:50px;
+    padding:1px;
+}
+
+.diff_file .diff_file_content_image img.diff_image_removed {
+    border:1px solid #C00;
+}
+
+.diff_file .diff_file_content_image img.diff_image_added {
+    border:1px solid #0C0;
+}
+
+.diff_file .diff_file_content_image.img_compared img {
+    max-width:300px;
+}
+
+.diff_file_content table {
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.diff_file_content table tr td {
+    font-size:12px;
+}
+
+.diff_file_content .old_line,.diff_file_content .new_line {
+    border:none;
+    background:#EEE;
+    color:#666;
+    border-right:1px solid #ccc;
+    text-align:right;
+    min-width:35px;
+    max-width:35px;
+    width:35px;
+    margin:0;
+    padding:0 5px;
+}
+
+.diff_file_content .old_line a,.diff_file_content .new_line a {
+    float:left;
+    width:35px;
+    font-weight:400;
+    color:#666;
+}
+
+.diff_file_content .old_line a:hover,.diff_file_content .new_line a:hover {
+    text-decoration:underline;
+}
+
+.diff_file_content .line_content {
+    white-space:pre;
+    height:14px;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.diff_file_content .line_content.new {
+    background:#CFD;
+}
+
+.diff_file_content .line_content.old {
+    background:#FDD;
+}
+
+.diff_file_content .line_content.matched {
+    color:#ccc;
+    background:#fafafa;
+}
+
+.commit-title {
+    display:block;
+    margin-bottom:10px;
+}
+
+.commit-author,.commit-committer {
+    display:block;
+    color:#999;
+    font-weight:400;
+    font-style:italic;
+}
+
+.commit-author strong,.commit-committer strong {
+    font-weight:700;
+    font-style:normal;
+}
+
+.commit .notes_count {
+    float:right;
+    margin:-6px 8px 6px;
+}
+
+.commit code {
+    background:#FCEEC1;
+    color:#474d57;
+}
+
+.commit .commit_short_id {
+    float:left;
+    min-width:65px;
+    font-family:Menlo, 'Liberation Mono', Consolas, 'Courier New', 'andale mono','lucida console',monospace;
+}
+
+.commit .commit-author-name {
+    color:#777;
+}
+
+.diff_file_header a,.file_stats a {
+    color:#474d57;
+}
+
+.file_stats span img {
+    width:14px;
+    float:left;
+    margin-right:6px;
+    padding:2px 0;
+}
+
+.label_commit {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border:none;
+    font-size:13px;
+    background:#474D57;
+    color:#fff;
+    font-family:Menlo, 'Liberation Mono', Consolas, 'Courier New', 'andale mono','lucida console',monospace;
+    padding:2px 4px;
+}
+
+.commit .browse_code_link_holder,.commit .committed_ago {
+    float:right;
+}

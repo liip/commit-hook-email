@@ -1,0 +1,10 @@
+<?php
+
+// GitLab private token (My profile / Account)
+$token = 'do0hi79yE9hUF';
+
+// Send commit emails to this email address
+$to = 'foo@example.org';
+
+// Random secret defined by you so not everyone can call your hook
+$secret = 'ABC';

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "fabpot/goutte": "dev-master",
+        "tijsverkoyen/css-to-inline-styles": "dev-master"
+    }
+}
