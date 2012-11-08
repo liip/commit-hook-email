@@ -15,7 +15,7 @@ if (stream_resolve_include_path($config)) {
 }
 
 // check secret
-if ($secret === @$_GET['secret']) {
+if ($secret !== @$_GET['secret']) {
     exit;
 }
 
