@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 use Goutte\Client;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
-$token = '';
+$gitlabToken = '';
 $to = '';
 $secret = '';
 
@@ -42,7 +42,7 @@ foreach ($json->commits as $commit) {
 
     // crawl commit diff from GitLab
     $client = new Client();
-    $crawler = $client->request('GET', $url . '?private_token=' . $token);
+    $crawler = $client->request('GET', $url . '?private_token=' . $gitlabToken);
 
     // remove GitLab layout
     $html = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>';

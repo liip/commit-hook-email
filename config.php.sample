@@ -1,7 +1,10 @@
 <?php
 
 // GitLab private token (My profile / Account)
-$token = 'do0hi79yE9hUF';
+$gitlabToken = 'do0hi79yE9hUF';
+
+// GitHub OAuth token
+$gitlabToken = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
 
 // Send commit emails to this email address
 $to = 'foo@example.org';

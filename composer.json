@@ -1,6 +1,7 @@
 {
     "require": {
         "fabpot/goutte": "dev-master",
+        "guzzle/guzzle": "2.8.*",
         "tijsverkoyen/css-to-inline-styles": "dev-master"
     }
 }

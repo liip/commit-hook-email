@@ -1,5 +1,5 @@
 {
-    "hash": "c978a29027a4e046a26fc49556dcc02b",
+    "hash": "e4c40ddfb70e05c684af03651d5fdf44",
     "packages": [
         {
             "name": "fabpot/goutte",
@@ -54,126 +54,75 @@
             ]
         },
         {
-            "name": "guzzle/common",
+            "name": "guzzle/guzzle",
             "version": "v2.8.8",
-            "target-dir": "Guzzle/Common",
             "source": {
                 "type": "git",
-                "url": "git://github.com/guzzle/common.git",
+                "url": "https://github.com/guzzle/guzzle",
                 "reference": "v2.8.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/guzzle/common/zipball/v2.8.8",
+                "url": "https://github.com/guzzle/guzzle/zipball/v2.8.8",
                 "reference": "v2.8.8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
+                "ext-curl": "*",
                 "symfony/event-dispatcher": "2.1.*"
             },
-            "time": "2012-10-15 17:42:47",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Common": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Common libraries used by Guzzle",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "log",
-                "event",
-                "cache",
-                "validation",
-                "Socket",
-                "common",
-                "batch",
-                "inflection"
-            ]
-        },
-        {
-            "name": "guzzle/http",
-            "version": "v2.8.8",
-            "target-dir": "Guzzle/Http",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/guzzle/http.git",
-                "reference": "v2.8.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/guzzle/http/zipball/v2.8.8",
-                "reference": "v2.8.8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
+            "replace": {
                 "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
                 "guzzle/parser": "self.version"
             },
-            "time": "2012-10-15 17:42:47",
+            "require-dev": {
+                "doctrine/common": "*",
+                "symfony/class-loader": "*",
+                "monolog/monolog": "1.*",
+                "zendframework/zend-cache": "2.0.0beta4",
+                "zendframework/zend-log": "2.0.0beta4",
+                "zendframework/zend-loader": "2.0.0beta4",
+                "zendframework/zend-stdlib": "2.0.0beta4",
+                "zendframework/zend-eventmanager": "2.0.0beta4",
+                "zendframework/zend-servicemanager": "2.0.0beta4",
+                "zend/zend-log1": "1.12",
+                "zend/zend-cache1": "1.12"
+            },
+            "time": "2012-10-15 17:25:16",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-0": {
-                    "Guzzle\\Http": ""
+                    "Guzzle\\Tests": "tests/",
+                    "Guzzle": "src/"
                 }
             },
             "license": [
                 "MIT"
             ],
-            "description": "HTTP libraries used by Guzzle",
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
+                "framework",
                 "curl",
                 "http",
+                "rest",
                 "http client",
                 "client",
-                "Guzzle"
-            ]
-        },
-        {
-            "name": "guzzle/parser",
-            "version": "v2.8.8",
-            "target-dir": "Guzzle/Parser",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/guzzle/parser.git",
-                "reference": "v2.8.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/guzzle/parser/zipball/v2.8.8",
-                "reference": "v2.8.8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "time": "2012-09-20 13:28:06",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Parser": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Interchangeable parsers used by Guzzle",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "http",
-                "url",
-                "message",
-                "cookie",
-                "URI Template"
+                "web service"
             ]
         },
         {
