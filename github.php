@@ -22,8 +22,8 @@ if ($secret !== @$_GET['secret']) {
 $request = isset($_POST['payload']) ? $_POST['payload'] : '{}';
 $json = json_decode($request);
 
-$branch = $json->repository->name . ':' . $json->ref;
-$many = count($json->commits) > 1;
+$repo = $json->repository->name;
+$branch = $json->ref;
 $api = '/repos/' . $json->repository->owner->name . '/' . $json->repository->name . '/commits';
 
 $client = new Client('https://api.github.com');
@@ -31,11 +31,13 @@ $client = new Client('https://api.github.com');
 $i = 0;
 foreach ($json->commits as $commit) {
 
-    // prepare subject
-    $subject = $commit->message . ' [' . $branch . ']';
-    if ($many) {
-        $subject .= '[' . $i++ . ']';
+    // skip non-distinct commit, propably merged
+    if (!$commit->distinct) {
+        continue;
     }
+
+    // prepare subject
+    $subject = $commit->message . ' [' . $repo . ']';
 
     // prepare commit variables
     $id = $commit->id;
@@ -49,7 +51,7 @@ foreach ($json->commits as $commit) {
     $data = json_decode($body);
 
     $message = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>';
-    $message .= '<p>Commit: <a href="' . $url . '" class="commit">' . $id . '</a></p>';
+    $message .= '<p>Commit: <a href="' . $url . '" class="commit">' . $id . '</a><br/>Branch: ' . $branch . '</p>';
     foreach ($data->files as $file) {
 
         $lines = explode("\n", $file->patch);
