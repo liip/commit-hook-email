@@ -5,6 +5,7 @@ require 'vendor/autoload.php';
 use Guzzle\Http\Client;
 
 $githubToken = '';
+$from = '';
 $to = '';
 $secret = '';
 
@@ -42,7 +43,7 @@ foreach ($json->commits as $commit) {
     // prepare commit variables
     $id = $commit->id;
     $url = $commit->url;
-    $from = $commit->author->name . ' <' . $commit->author->email . '>';
+    $author = $commit->author->name . ' <' . $commit->author->email . '>';
 
     // get commit diff from GitHub
     $response = $client->get($api . '/' . $id . '?access_token=' . $githubToken)->send();
@@ -82,5 +83,6 @@ foreach ($json->commits as $commit) {
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
     $headers .= 'From: ' . $from . "\r\n";
+    $headers .= 'Reply-To: ' . $author . "\r\n";
     mail($to, $subject, $message, $headers);
 }
