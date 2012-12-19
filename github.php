@@ -43,7 +43,6 @@ foreach ($json->commits as $commit) {
     // prepare commit variables
     $id = $commit->id;
     $url = $commit->url;
-    $author = $commit->author->name . ' <' . $commit->author->email . '>';
 
     // get commit diff from GitHub
     $response = $client->get($api . '/' . $id . '?access_token=' . $githubToken)->send();
@@ -82,7 +81,7 @@ foreach ($json->commits as $commit) {
     // send email
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-    $headers .= 'From: ' . $from . "\r\n";
-    $headers .= 'Reply-To: ' . $author . "\r\n";
+    $headers .= 'From: ' . $commit->author->name . ' <' . $from . '>' . "\r\n";
+    $headers .= 'Reply-To: ' . $commit->author->email . "\r\n";
     mail($to, $subject, $message, $headers);
 }

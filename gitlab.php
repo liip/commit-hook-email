@@ -39,7 +39,6 @@ foreach ($json->commits as $commit) {
     // prepare commit variables
     $id = $commit->id;
     $url = str_replace('commits', 'commit', $commit->url);
-    $author = $commit->author->name . ' <' . $commit->author->email . '>';
 
     // crawl commit diff from GitLab
     $client = new Client();
@@ -62,7 +61,7 @@ foreach ($json->commits as $commit) {
     // send email
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-    $headers .= 'From: ' . $from . "\r\n";
-    $headers .= 'Reply-To: ' . $author . "\r\n";
+    $headers .= 'From: ' . $commit->author->name . ' <' . $from . '>' . "\r\n";
+    $headers .= 'Reply-To: ' . $commit->author->email . "\r\n";
     mail($to, $subject, $message, $headers);
 }
