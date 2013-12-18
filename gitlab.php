@@ -52,7 +52,7 @@ foreach ($json->commits as $commit) {
             )
         );
         $client->setClient($guzzle);
-    )
+    }
 
     $crawler = $client->request('GET', $url . '?private_token=' . $gitlabToken);
 
