@@ -45,10 +45,10 @@ foreach ($json->commits as $commit) {
 
     $guzzle = $client->getClient();
     $guzzle->setConfig(
-            array(
-                    'curl.CURLOPT_SSL_VERIFYHOST' => false,
-                    'curl.CURLOPT_SSL_VERIFYPEER' => false,
-            )
+        array(
+            'curl.CURLOPT_SSL_VERIFYHOST' => false,
+            'curl.CURLOPT_SSL_VERIFYPEER' => false,
+        )
     );
     $client->setClient($guzzle);
 
