@@ -2,9 +2,11 @@
 
 // GitLab private token (My profile / Account)
 $gitlabToken = 'do0hi79yE9hUF';
+// Disable CURLOPT_SSL_ and CURLOPT_SSL_VERIFYPEER
+$gitlabDisableSecure = false;
 
 // GitHub OAuth token
-$gitlabToken = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+$githubToken = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
 
 // Sender of the commit emails
 $from = 'mail@example.org';
