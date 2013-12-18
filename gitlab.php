@@ -42,6 +42,7 @@ foreach ($json->commits as $commit) {
 
     // crawl commit diff from GitLab
     $parameters = http_build_query(array('private_token' => $gitlabToken));
+    $client = new Client();
     $request = $client->get($url.'?'.$parameters);
 
     if ($gitlabDisableSecure) {
