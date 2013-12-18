@@ -41,16 +41,18 @@ foreach ($json->commits as $commit) {
     $url = str_replace('commits', 'commit', $commit->url);
 
     // crawl commit diff from GitLab
-    $parameters = http_build_query(array('private_token' => $gitlabToken));
     $client = new Client();
-    $request = $client->get($url.'?'.$parameters);
 
-    if ($gitlabDisableSecure) {
-        $request->getCurlOptions()->set(CURLOPT_SSL_VERIFYHOST, false);
-        $request->getCurlOptions()->set(CURLOPT_SSL_VERIFYPEER, false);
-    }
+    $guzzle = $client->getClient();
+    $guzzle->setConfig(
+            array(
+                    'curl.CURLOPT_SSL_VERIFYHOST' => false,
+                    'curl.CURLOPT_SSL_VERIFYPEER' => false,
+            )
+    );
+    $client->setClient($guzzle);
 
-    $crawler = $request->send();
+    $crawler = $client->request('GET', $url . '?private_token=' . $gitlabToken);
 
     // remove GitLab layout
     $html = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>';
